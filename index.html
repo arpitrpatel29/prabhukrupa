@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+  DRAFT landing page for Arpit's QA testing services business.
+  BEFORE PUBLISHING, personalize these (search this file for them):
+    1. "Patel QA Services"  -> your business name
+    2. "arpitrpatel08@gmail.com" -> the email you want inquiries sent to
+    3. Pricing numbers under "Pricing" -> your rates
+    4. "YOUR-FORM-ID" below -> your Formspree form ID (see README.md), or
+       delete the form and keep the "Email me" button only.
+  No employer names are on this page on purpose — decide before adding any.
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patel QA Services — Software Testing for Startups & Small Businesses</title>
+<meta name="description" content="10+ years of manual QA experience. Test plans, release testing, and clear bug reports that help you ship with confidence.">
+<style>
+  :root{
+    --ink:#1a2332; --muted:#5b6577; --accent:#1d4ed8; --accent-dark:#1e40af;
+    --bg:#ffffff; --soft:#f4f6fb; --line:#e3e8f2; --radius:12px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       color:var(--ink); background:var(--bg); line-height:1.6; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1020px; margin:0 auto; padding:0 24px}
+  header{position:sticky; top:0; background:rgba(255,255,255,.94); backdrop-filter:blur(8px);
+         border-bottom:1px solid var(--line); z-index:10}
+  header .wrap{display:flex; align-items:center; justify-content:space-between; height:64px}
+  .brand{font-weight:700; font-size:1.05rem; letter-spacing:-.01em}
+  .brand span{color:var(--accent)}
+  nav a{color:var(--muted); text-decoration:none; margin-left:22px; font-size:.95rem}
+  nav a:hover{color:var(--ink)}
+  .btn{display:inline-block; background:var(--accent); color:#fff; text-decoration:none;
+       padding:12px 26px; border-radius:8px; font-weight:600; font-size:1rem; border:0; cursor:pointer}
+  .btn:hover{background:var(--accent-dark)}
+  .btn.ghost{background:#fff; color:var(--accent); border:1.5px solid var(--accent)}
+  .btn.ghost:hover{background:var(--soft)}
+  .hero{padding:96px 0 72px; text-align:center}
+  .hero .kicker{display:inline-block; font-size:.8rem; font-weight:700; letter-spacing:.08em;
+                text-transform:uppercase; color:var(--accent); background:var(--soft);
+                padding:6px 14px; border-radius:999px; margin-bottom:20px}
+  .hero h1{font-size:clamp(2rem,5vw,3.2rem); line-height:1.15; letter-spacing:-.02em; margin-bottom:18px}
+  .hero p.lede{font-size:1.2rem; color:var(--muted); max-width:640px; margin:0 auto 32px}
+  .hero .cta-row{display:flex; gap:14px; justify-content:center; flex-wrap:wrap}
+  section{padding:64px 0}
+  section.alt{background:var(--soft)}
+  h2{font-size:1.7rem; letter-spacing:-.01em; margin-bottom:8px; text-align:center}
+  .sub{color:var(--muted); text-align:center; max-width:620px; margin:0 auto 40px}
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px}
+  .card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:28px}
+  .card h3{font-size:1.1rem; margin-bottom:8px}
+  .card p{color:var(--muted); font-size:.97rem}
+  .card .icon{font-size:1.6rem; margin-bottom:12px; display:block}
+  .steps{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; counter-reset:step}
+  .step{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:24px; position:relative}
+  .step::before{counter-increment:step; content:counter(step); display:inline-flex; align-items:center; justify-content:center;
+                width:34px; height:34px; border-radius:50%; background:var(--accent); color:#fff;
+                font-weight:700; margin-bottom:14px}
+  .step h3{font-size:1.05rem; margin-bottom:6px}
+  .step p{color:var(--muted); font-size:.95rem}
+  .price-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:20px; align-items:stretch}
+  .price{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:32px; display:flex; flex-direction:column}
+  .price.featured{border:2px solid var(--accent)}
+  .price h3{font-size:1.15rem}
+  .price .amount{font-size:2rem; font-weight:700; margin:10px 0 4px; letter-spacing:-.02em}
+  .price .per{color:var(--muted); font-size:.9rem; margin-bottom:16px}
+  .price ul{list-style:none; margin-bottom:24px; flex:1}
+  .price li{padding:7px 0 7px 28px; position:relative; font-size:.95rem; color:var(--muted)}
+  .price li::before{content:"✓"; position:absolute; left:4px; color:var(--accent); font-weight:700}
+  .note{font-size:.85rem; color:var(--muted); text-align:center; margin-top:20px}
+  .about{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start}
+  @media(max-width:720px){.about{grid-template-columns:1fr}}
+  .about ul{list-style:none}
+  .about li{padding:8px 0 8px 30px; position:relative}
+  .about li::before{content:"▸"; position:absolute; left:8px; color:var(--accent); font-weight:700}
+  .tools{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
+  .tools span{background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 16px; font-size:.88rem; color:var(--muted)}
+  .faq{max-width:700px; margin:0 auto}
+  .faq details{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:18px 22px; margin-bottom:12px}
+  .faq summary{font-weight:600; cursor:pointer}
+  .faq p{color:var(--muted); margin-top:10px; font-size:.95rem}
+  .contact-box{max-width:620px; margin:0 auto; background:#fff; border:1px solid var(--line);
+               border-radius:var(--radius); padding:36px}
+  .contact-box label{display:block; font-weight:600; font-size:.9rem; margin:14px 0 6px}
+  .contact-box input,.contact-box textarea{width:100%; padding:12px 14px; border:1px solid var(--line);
+       border-radius:8px; font-size:1rem; font-family:inherit}
+  .contact-box textarea{min-height:120px; resize:vertical}
+  .contact-box .btn{width:100%; margin-top:20px}
+  .or{text-align:center; color:var(--muted); margin:18px 0 6px; font-size:.9rem}
+  .mail-link{display:block; text-align:center; font-weight:600; color:var(--accent); text-decoration:none; font-size:1.05rem}
+  footer{border-top:1px solid var(--line); padding:32px 0; color:var(--muted); font-size:.88rem; text-align:center}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Patel QA <span>Services</span></div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="btn" style="padding:9px 20px; margin-left:22px">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="kicker">Manual QA · Test Planning · Release Testing</div>
+    <h1>Ship software your customers can trust.</h1>
+    <p class="lede">10+ years of hands-on QA experience. I write the test plans, run the release testing, and hand you clear bug reports — so your team ships with confidence.</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn">Start with a free 15-min call</a>
+      <a href="#pricing" class="btn ghost">See pricing</a>
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <h2>What I do</h2>
+    <p class="sub">Manual-first testing for web apps, SaaS products, and mobile web — the testing most small teams skip and later regret.</p>
+    <div class="grid">
+      <div class="card"><span class="icon">🧪</span><h3>Manual &amp; Functional Testing</h3><p>End-to-end testing of features, user flows, and edge cases across browsers and devices.</p></div>
+      <div class="card"><span class="icon">📋</span><h3>Test Plans &amp; Test Cases</h3><p>Structured test plans and reusable test case suites your team keeps long after I'm gone.</p></div>
+      <div class="card"><span class="icon">🔁</span><h3>Regression Testing</h3><p>Per-release regression runs that catch what new code breaks — before your customers do.</p></div>
+      <div class="card"><span class="icon">🔌</span><h3>API Testing</h3><p>Postman and SoapUI-based API validation: contracts, status codes, payloads, error handling.</p></div>
+      <div class="card"><span class="icon">🐞</span><h3>Bug Reports &amp; Triage</h3><p>Clear reports with steps to reproduce, expected vs. actual, screenshots, and severity — ready for your devs.</p></div>
+      <div class="card"><span class="icon">🚀</span><h3>Release Readiness</h3><p>Smoke testing and a go/no-go summary before every release, so launches aren't surprises.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="alt">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">Simple, fixed-scope engagements. No long contracts to start.</p>
+    <div class="steps">
+      <div class="step"><h3>Discovery call</h3><p>A free 15-minute call: what you're building, what hurts, what "done" looks like.</p></div>
+      <div class="step"><h3>Fixed-price proposal</h3><p>You get a scoped proposal with a fixed price and timeline. No hourly meter running.</p></div>
+      <div class="step"><h3>Testing &amp; reports</h3><p>I test and send clear bug reports with severity and repro steps, on an agreed cadence.</p></div>
+      <div class="step"><h3>Release sign-off</h3><p>A summary report per release: what was tested, what failed, what's safe to ship.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <h2>Pricing</h2>
+    <p class="sub">Starting points, not final quotes — every engagement is scoped and fixed-price before work begins.</p>
+    <div class="price-grid">
+      <div class="price">
+        <h3>Release Testing</h3>
+        <div class="amount">$800</div><div class="per">starting at, per release cycle</div>
+        <ul>
+          <li>Functional + regression testing</li>
+          <li>Bug reports with repro steps</li>
+          <li>Release summary &amp; sign-off</li>
+        </ul>
+      </div>
+      <div class="price featured">
+        <h3>Monthly QA Retainer</h3>
+        <div class="amount">$2,000</div><div class="per">starting at, per month</div>
+        <ul>
+          <li>Continuous testing across sprints</li>
+          <li>Regression suite maintenance</li>
+          <li>Weekly bug triage reports</li>
+          <li>Direct Slack/email access</li>
+        </ul>
+      </div>
+      <div class="price">
+        <h3>Test Plan &amp; Strategy</h3>
+        <div class="amount">$1,500</div><div class="per">starting at, per engagement</div>
+        <ul>
+          <li>Full test plan for your product</li>
+          <li>Reusable test case suite</li>
+          <li>QA process recommendations</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">Draft numbers — final pricing is set after the discovery call, in writing, before any work starts.</p>
+  </div>
+</section>
+
+<section id="about" class="alt">
+  <div class="wrap">
+    <h2>Why work with me</h2>
+    <p class="sub">You get a senior QA engineer, not a ticket queue.</p>
+    <div class="about">
+      <div>
+        <ul>
+          <li><strong>10+ years</strong> in software QA, including large-scale enterprise releases</li>
+          <li><strong>Certified Scrum Master (CSM)</strong> — I fit into agile teams without hand-holding</li>
+          <li>Deep experience with <strong>release testing under real deadlines</strong></li>
+          <li><strong>US-based</strong> (Georgia) — same timezone, clear communication</li>
+          <li>I write <strong>workflow and process documentation</strong>, so knowledge stays with you</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-weight:600; margin-bottom:4px">Tools I work with</p>
+        <div class="tools">
+          <span>Jira</span><span>Zephyr</span><span>Azure DevOps</span>
+          <span>Postman</span><span>SoapUI</span><span>Selenium</span>
+        </div>
+        <p style="margin-top:18px; color:var(--muted); font-size:.95rem">Manual-first testing: functional, regression, exploratory, usability, and API testing. Straightforward reports your developers can act on the same day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>Common questions</h2>
+    <p class="sub">Short answers.</p>
+    <div class="faq">
+      <details>
+        <summary>Do you write automated tests?</summary>
+        <p>My core is manual QA — functional, regression, exploratory, and API testing. That's where most small teams have the biggest gap, and it's what I do best.</p>
+      </details>
+      <details>
+        <summary>How fast can you start?</summary>
+        <p>Usually within a week of the discovery call. Release testing engagements are scoped in days, not weeks.</p>
+      </details>
+      <details>
+        <summary>Will you sign an NDA?</summary>
+        <p>Yes — happy to sign your NDA before the discovery call if you prefer.</p>
+      </details>
+      <details>
+        <summary>Who is this not for?</summary>
+        <p>If you need full-time embedded QA or heavy test-automation engineering, I'm not the right fit — and I'll tell you that on the first call.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="alt">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p class="sub">Tell me what you're building and what keeps breaking. I reply within one business day.</p>
+    <div class="contact-box">
+      <!-- Replace YOUR-FORM-ID with your Formspree form ID (free, 5-minute setup — see README.md) -->
+      <form action="https://formspree.io/f/YOUR-FORM-ID" method="POST">
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" required>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+        <label for="msg">What do you need tested?</label>
+        <textarea id="msg" name="message" required></textarea>
+        <button class="btn" type="submit">Send message</button>
+      </form>
+      <div class="or">— or —</div>
+      <a class="mail-link" href="mailto:arpitrpatel08@gmail.com">arpitrpatel08@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Patel QA Services · Cumming, Georgia · Available for US clients, remote<br>
+    <span style="font-size:.8rem">© 2026 Patel QA Services. Draft site — not yet published.</span>
+  </div>
+</footer>
+
+</body>
+</html>
